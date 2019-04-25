@@ -1,3 +1,3 @@
-# [Платформу для обучения программированию Hyperskill](https://hyperskill.org)
+# Платформа для обучения программированию [Hyperskill](https://hyperskill.org)
 ***
 ## Проекты
