@@ -9,8 +9,8 @@ import java.io.File;
 
 public class Main {
     public static void main(String[] args) {
-        String inFile = "Linear Equations Solver\\src\\solver\\in.txt";
-        String outFile= "Linear Equations Solver\\src\\solver\\out.txt";
+        String inFile = "in.txt";
+        String outFile= "out.txt";
 
         // Парсим входящие параметры
         for (int i=0; i<args.length; i++){

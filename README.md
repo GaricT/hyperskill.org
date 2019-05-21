@@ -4,3 +4,4 @@
 
 * [Tic-Tac-Toe](https://hyperskill.org/projects/48) Игра "крестики нолики"  
 * [Linear Equations Solver](https://hyperskill.org/projects/40) Решение системы линейных уравнений  
+* [Coffee Machine](https://hyperskill.org/projects/33) Эмулятор кофемашины  
