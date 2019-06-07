@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Coffee Machine/Coffee Machine.iml" filepath="$PROJECT_DIR$/Coffee Machine/Coffee Machine.iml" />
       <module fileurl="file://$PROJECT_DIR$/Linear Equations Solver/Linear Equations Solver.iml" filepath="$PROJECT_DIR$/Linear Equations Solver/Linear Equations Solver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Numeral System Converter/Numeral System Converter.iml" filepath="$PROJECT_DIR$/Numeral System Converter/Numeral System Converter.iml" />
       <module fileurl="file://$PROJECT_DIR$/Tic-Tac-Toe/Tic-Tac-Toe.iml" filepath="$PROJECT_DIR$/Tic-Tac-Toe/Tic-Tac-Toe.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/hyperskill.org.iml" filepath="$PROJECT_DIR$/.idea/hyperskill.org.iml" />
     </modules>
