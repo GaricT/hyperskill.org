@@ -1,39 +1,35 @@
 package search.vault;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Scanner;
 import java.util.Set;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class TextFileVault implements Vault {
 
     private List<String> data = new LinkedList<>();
     private Map<String, List<Integer>> inverseMap = new HashMap<>();
 
-    public TextFileVault(String fileName) throws FileNotFoundException {
-        try (Scanner scanner = new Scanner(new File(fileName))) {
-            while (scanner.hasNext()) {
-                String value = scanner.nextLine();
-                data.add(value);
-                Arrays.stream(value.split(" "))
-                        .forEach(s -> inverseMap
-                                .computeIfAbsent(s.toLowerCase(), v -> new LinkedList()).add(data.size() - 1));
+    public TextFileVault(String fileName) throws IOException {
+        Function<String, List<Integer>> getList = s -> new LinkedList<>();
+        try (Stream<String> lines = Files.lines(Path.of(fileName))) {
+            lines.forEach(s -> {
+                data.add(s);
+                Arrays.asList(s.split(" ")).forEach(
+                        v -> inverseMap.computeIfAbsent(v, getList).add(data.size() - 1));
+            });
             }
         }
-    }
-
-    public List<String> getUsersByFilter(String value) {
-        return inverseMap.getOrDefault(value, new LinkedList<>()).stream()
-                .map(s -> data.get(s)).collect(Collectors.toList());
-    }
 
     @Override
     public List<Integer> getWordOccursId(String word) {

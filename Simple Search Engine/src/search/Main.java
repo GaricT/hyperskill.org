@@ -3,7 +3,7 @@ package search;
 import search.engine.SearchEngine;
 import search.vault.TextFileVault;
 
-import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,7 +15,7 @@ public class Main {
             try(SimpleSearchEngine simpleSearchEngine = new SimpleSearchEngine(simpleVault, searchEngine)){
                 simpleSearchEngine.run();
             }
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             System.out.printf("File not found: '%s'\n", fileName);
         }
     }
